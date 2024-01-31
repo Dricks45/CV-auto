@@ -14,7 +14,7 @@ function Nav() {
       <ul className="navbar_links">
         <li className="navbar_item slide_in_down_1">
           <Link
-            to="/"
+            to="/accueil"
             className="navbar_link link_accueil"
             onClick={handleShowLinks}
           >
@@ -32,7 +32,7 @@ function Nav() {
         </li>
         <li className="navbar_item slide_in_down_3">
           <Link
-            to="/page/carte"
+            to="/generer"
             className="navbar_link link_carte"
             onClick={handleShowLinks}
           >
@@ -41,7 +41,7 @@ function Nav() {
         </li>
         <li className="navbar_item slide_in_down_4">
           <Link
-            to="/page/Informations"
+            to="/informations"
             className="navbar_link link_information"
             onClick={handleShowLinks}
           >
