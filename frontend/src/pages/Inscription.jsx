@@ -10,6 +10,9 @@ function Inscription() {
     password: "",
   });
 
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -17,25 +20,41 @@ function Inscription() {
       [name]: value,
     }));
   };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Ajoutez ici la logique pour l'inscription ou la connexion en fonction de 'isRegistered'
-    if (isRegistered) {
-      // Logique de connexion
-      // eslint-disable-next-line no-restricted-syntax
-      console.log(`Connexion avec email: ${formData.email}`);
-    } else {
-      // Logique d'inscription
-      // eslint-disable-next-line no-restricted-syntax
-      console.log(
-        `Inscription avec prénom: ${formData.firstName}, email: ${formData.email}`
+
+    if (!formData.firstName || !formData.email || !formData.password) {
+      setError("Veuillez remplir tous les champs obligatoires.");
+      return;
+    }
+
+    try {
+      setError(null);
+
+      if (isRegistered) {
+        await new Promise((resolve) => {
+          setTimeout(resolve, 1000);
+        });
+        setSuccess(
+          `Connexion réussie avec prénom: ${formData.firstName} email: ${formData.email}`
+        );
+      } else {
+        await new Promise((resolve) => {
+          setTimeout(resolve, 1000);
+        });
+        setSuccess(
+          `Inscription réussie avec prénom: ${formData.firstName}, email: ${formData.email}`
+        );
+      }
+    } catch (err) {
+      setError(
+        "Une erreur s'est produite lors du traitement de votre demande. Veuillez réessayer."
       );
     }
   };
 
   return (
-    <div>
+    <div className="container_inscription">
       {isRegistered ? (
         <form onSubmit={handleSubmit}>
           <label>
@@ -54,6 +73,15 @@ function Inscription() {
               type="email"
               name="email"
               value={formData.email}
+              onChange={handleChange}
+            />
+          </label>
+          <label>
+            Mot de passe:
+            <input
+              type="password"
+              name="password"
+              value={formData.password}
               onChange={handleChange}
             />
           </label>
@@ -106,9 +134,23 @@ function Inscription() {
         </form>
       )}
       <br />
-      <button type="button" onClick={() => setIsRegistered(!isRegistered)}>
+      <button
+        className="btn_plus_inscription"
+        type="button"
+        onClick={() => setIsRegistered(!isRegistered)}
+      >
         {isRegistered ? "Je ne suis pas encore inscrit" : "J'ai déjà un compte"}
       </button>
+      {error && (
+        <div className="anim" style={{ color: "red" }}>
+          {error}
+        </div>
+      )}
+      {success && (
+        <div className="anim" style={{ color: "green" }}>
+          {success}
+        </div>
+      )}
     </div>
   );
 }
