@@ -1,0 +1,26 @@
+.container_accueil {
+  padding: 5px;
+  font-size: 15px;
+}
+
+.desc_accueil {
+  margin: 5px 0;
+  color: antiquewhite;
+}
+
+.desc_accueil span {
+  color: #4ab45aa6;
+  font-family: "Permanent Marker", cursive;
+  font-weight: 100;
+}
+
+.desc_accueil hr {
+  width: 50%;
+  border-color: #4ab45aa6;
+}
+
+.desc_acueil h4 {
+  font-family: "Permanent Marker", cursive;
+  font-weight: lighter;
+  margin: 8px;
+}

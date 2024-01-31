@@ -28,33 +28,6 @@ body {
   margin: 0;
 }
 
-.place_desc_app {
-  padding: 5px;
-  font-size: 15px;
-}
-
-.desc_app {
-  margin: 5px 0;
-  color: antiquewhite;
-}
-
-.desc_app span {
-  color: #4ab45aa6;
-  font-family: "Permanent Marker", cursive;
-  font-weight: 100;
-}
-
-.desc_app hr {
-  width: 50%;
-  border-color: #4ab45aa6;
-}
-
-.desc_app h4 {
-  font-family: "Permanent Marker", cursive;
-  font-weight: lighter;
-  margin: 8px;
-}
-
 footer {
   position: fixed;
   bottom: 0;

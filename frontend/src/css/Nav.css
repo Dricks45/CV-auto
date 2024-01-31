@@ -11,7 +11,7 @@ a {
 .navbar {
   grid-row: 1 / 6;
   width: 100%;
-  min-height: 75px;
+  min-height: 45px;
   padding: 0;
   z-index: 1000;
   color: antiquewhite;
@@ -166,7 +166,7 @@ a {
     border: none;
     display: block;
     position: absolute;
-    top: 15px;
+    top: 5px;
     right: 5px;
   }
 
