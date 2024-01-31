@@ -7,6 +7,7 @@ import App from "./App";
 import Accueil from "./pages/Accueil";
 import Inscription from "./pages/Inscription";
 import Generer from "./pages/Generer";
+import Texte from "./pages/Texte";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: "/generer",
         element: <Generer />,
+      },
+      {
+        path: "/generer/texte",
+        element: <Texte />,
       },
     ],
   },

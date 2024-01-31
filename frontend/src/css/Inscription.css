@@ -22,6 +22,7 @@
 .container_inscription form label input {
   border: 1px solid #4ab45a;
   border-radius: 5px;
+  margin: 5px;
   background-color: antiquewhite;
 }
 
