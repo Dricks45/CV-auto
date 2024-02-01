@@ -2,7 +2,7 @@
 
 .container_inscription {
   color: antiquewhite;
-  width: 100vw;
+  width: 60vw;
   text-align: center;
 }
 
@@ -16,7 +16,7 @@
 
 .container_inscription form label {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 }
 
 .container_inscription form label input {
@@ -58,5 +58,12 @@
   }
   50% {
     opacity: 0.5;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container_inscription {
+    width: 80vw;
+    text-align: center;
   }
 }

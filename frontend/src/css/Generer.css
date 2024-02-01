@@ -33,9 +33,17 @@
   max-width: 35vw;
   max-height: 25vh;
   border: 1px solid #4ab45a;
+  border-radius: 5px;
   transition: 0.5s ease;
 }
 
 .img_style:hover {
   transform: scale(1.1);
+  animation: vibre 0.5s 1;
+}
+
+@keyframes vibre {
+  100% {
+    rotate: 10deg;
+  }
 }

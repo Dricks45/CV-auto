@@ -9,8 +9,7 @@ a {
 }
 
 .navbar {
-  grid-row: 1 / 6;
-  width: 100%;
+  width: 0%;
   min-height: 45px;
   padding: 0;
   z-index: 1000;
@@ -22,7 +21,11 @@ a {
   flex-direction: column;
   position: absolute;
   left: -129px;
-  top: 247px;
+  top: 55px;
+}
+
+.navbar_item {
+  margin-bottom: 5px;
 }
 
 .navbar_item:hover {
@@ -36,9 +39,9 @@ a {
   align-items: center;
   padding: 0 5px;
   font-size: 1.3rem;
-  color: green;
+  color: #4ab45a;
   background: antiquewhite;
-  border: 3px solid green;
+  border: 3px solid #4ab45a;
   border-radius: 0 17px 17px 0;
   height: 38px;
   width: 150px;
@@ -49,32 +52,29 @@ a {
   width: 40px;
   height: 40px;
   background: transparent;
-  color: green;
+  color: #4ab45a;
   display: none;
 }
 
 .link_accueil::after {
-  content: url(../assets/accueil.webp);
+  content: url(../assets/accueil-24.png);
 }
 
-.link_profil::after {
-  content: url(../assets/utilisateur_1.webp);
+.link_inscription::after {
+  content: url(../assets/inscription-24.png);
 }
 
-.link_carte::after {
-  content: url(../assets/francais.webp);
+.link_generer::after {
+  content: url(../assets/fabrication-24.png);
 }
 
 .link_information::after {
-  content: url(../assets/information.webp);
-}
-
-.link_deconection::after {
-  content: url(../assets/deconnexion.webp);
+  content: url(../assets/information-24.png);
 }
 
 @media screen and (max-width: 767px) {
   .navbar {
+    width: 100%;
     background: transparent;
     position: absolute;
   }
@@ -189,6 +189,7 @@ a {
 
   .navbar_item {
     transform: translateY(100vh);
+    opacity: 1;
   }
 
   .show_nav .navbar_item {
