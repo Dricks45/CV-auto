@@ -24,7 +24,7 @@ function Nav() {
         <li className="navbar_item slide_in_down_2">
           <Link
             to="/inscription"
-            className="navbar_link link_profil"
+            className="navbar_link link_inscription"
             onClick={handleShowLinks}
           >
             Inscription
@@ -33,7 +33,7 @@ function Nav() {
         <li className="navbar_item slide_in_down_3">
           <Link
             to="/generer"
-            className="navbar_link link_carte"
+            className="navbar_link link_generer"
             onClick={handleShowLinks}
           >
             Générer

@@ -11,6 +11,7 @@
 
 .container_texte label input {
   border: 1px solid #4ab45a;
+  border-radius: 5px;
 }
 
 .container_texte hr {
@@ -30,6 +31,7 @@
 .formation label textarea {
   border: 1px solid #4ab45a;
   height: 60px;
+  border-radius: 5px;
 }
 
 .container_texte button {
