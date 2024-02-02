@@ -1,0 +1,59 @@
+.container_texte {
+  color: antiquewhite;
+  padding: 8px;
+  text-align: center;
+}
+
+.container_texte label {
+  display: flex;
+  flex-direction: column;
+}
+
+.container_texte label input {
+  border: 1px solid #4ab45a;
+  border-radius: 5px;
+}
+
+.container_texte hr {
+  margin: 5px auto;
+  width: 50%;
+  color: antiquewhite;
+}
+
+.title_section_texte {
+  font-family: "Permanent Marker", cursive;
+  font-weight: 100;
+  color: #4ab45a;
+  margin: 16px 0 5px;
+}
+
+.experience label textarea,
+.formation label textarea {
+  border: 1px solid #4ab45a;
+  height: 60px;
+  border-radius: 5px;
+}
+
+.container_texte button {
+  margin: 5px;
+  background-color: antiquewhite;
+  border: 1px solid #4ab45a;
+  box-shadow: inset 0 0 0 0 #4ab45a;
+  transition: 0.8s;
+}
+
+.container_texte button:hover {
+  box-shadow: inset 0 0 10px 17px #4ab45a;
+}
+
+.soumission_texte {
+  border: 1px solid #4ab45a;
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 0 #4ab45a;
+  background-color: antiquewhite;
+  transition: 0.8s;
+}
+
+.soumission_texte:hover {
+  box-shadow: inset 0 0 10px 17px #4ab45a;
+}

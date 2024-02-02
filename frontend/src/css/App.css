@@ -1,0 +1,56 @@
+/* font-family: 'Permanent Marker', cursive; */
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: black;
+  height: 100vh !important;
+  width: 100vw !important;
+}
+
+.header_app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../assets/banniere.jpg);
+  background-size: contain;
+  background-position: center center;
+  min-height: 50px;
+}
+
+.title_app {
+  font-family: "Permanent Marker", cursive;
+  font-weight: 300;
+  text-align: center;
+  color: black;
+  text-shadow: 0 0 15px #4ab45a;
+  margin: 0;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  background-image: url(../assets/matrix.jpg);
+  background-size: contain;
+  background-position: center center;
+  width: 100vw;
+}
+
+.foot_app {
+  margin: 5px;
+  text-align: center;
+  color: antiquewhite;
+}
+
+main {
+  margin: 0 auto;
+  padding: 3% 0;
+  width: 60%;
+}
+
+@media screen and (max-width: 767px) {
+  main {
+    width: 80%;
+  }
+}
