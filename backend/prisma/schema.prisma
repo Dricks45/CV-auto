@@ -18,16 +18,12 @@ model Users {
   mail String @unique
   telephone String
   ville String
-  photo String
+  photo String?
   mdp String
-  experiences Experiences @relation(fields: [experiencesId], references: [id])
-  experiencesId Int
-  formations Formations @relation(fields: [formationId], references: [id])
-  formationId Int
-  loisirs Loisirs @relation(fields: [loisirsId], references: [id])
-  loisirsId Int
-  langues Langues @relation(fields: [languesId], references: [id])
-  languesId Int
+  experiences Experiences[]
+  formations Formations[]
+  loisirs Loisirs[]
+  langues Langues[]
 }
 
 model Experiences {
@@ -36,7 +32,8 @@ model Experiences {
   datef String
   poste String
   desc String
-  Users Users[]
+  users Users @relation(fields: [userId], references: [id])
+  userId Int
   }
 
   model Formations {
@@ -45,17 +42,20 @@ model Experiences {
   datef String
   poste String
   desc String
-  Users Users[]
+  users Users @relation(fields: [userId], references: [id])
+  userId Int
   }
 
   model Loisirs {
   id Int @id @default(autoincrement())
-  desc String
-  Users Users[]
+  nom String
+  users Users @relation(fields: [userId], references: [id])
+  userId Int
   }
 
   model Langues {
   id Int @id @default(autoincrement())
   pays String
-  Users Users[]
+  users Users @relation(fields: [userId], references: [id])
+  userId Int
   }
