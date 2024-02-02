@@ -6,12 +6,8 @@ CREATE TABLE `Users` (
     `mail` VARCHAR(191) NOT NULL,
     `telephone` VARCHAR(191) NOT NULL,
     `ville` VARCHAR(191) NOT NULL,
-    `photo` VARCHAR(191) NOT NULL,
+    `photo` VARCHAR(191) NULL,
     `mdp` VARCHAR(191) NOT NULL,
-    `experiencesId` INTEGER NOT NULL,
-    `formationId` INTEGER NOT NULL,
-    `loisirsId` INTEGER NOT NULL,
-    `languesId` INTEGER NOT NULL,
 
     UNIQUE INDEX `Users_mail_key`(`mail`),
     PRIMARY KEY (`id`)
@@ -24,6 +20,7 @@ CREATE TABLE `Experiences` (
     `datef` VARCHAR(191) NOT NULL,
     `poste` VARCHAR(191) NOT NULL,
     `desc` VARCHAR(191) NOT NULL,
+    `userId` INTEGER NOT NULL,
 
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -35,6 +32,7 @@ CREATE TABLE `Formations` (
     `datef` VARCHAR(191) NOT NULL,
     `poste` VARCHAR(191) NOT NULL,
     `desc` VARCHAR(191) NOT NULL,
+    `userId` INTEGER NOT NULL,
 
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -42,7 +40,8 @@ CREATE TABLE `Formations` (
 -- CreateTable
 CREATE TABLE `Loisirs` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
-    `desc` VARCHAR(191) NOT NULL,
+    `nom` VARCHAR(191) NOT NULL,
+    `userId` INTEGER NOT NULL,
 
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -51,18 +50,19 @@ CREATE TABLE `Loisirs` (
 CREATE TABLE `Langues` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `pays` VARCHAR(191) NOT NULL,
+    `userId` INTEGER NOT NULL,
 
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- AddForeignKey
-ALTER TABLE `Users` ADD CONSTRAINT `Users_experiencesId_fkey` FOREIGN KEY (`experiencesId`) REFERENCES `Experiences`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `Experiences` ADD CONSTRAINT `Experiences_userId_fkey` FOREIGN KEY (`userId`) REFERENCES `Users`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `Users` ADD CONSTRAINT `Users_formationId_fkey` FOREIGN KEY (`formationId`) REFERENCES `Formations`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `Formations` ADD CONSTRAINT `Formations_userId_fkey` FOREIGN KEY (`userId`) REFERENCES `Users`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `Users` ADD CONSTRAINT `Users_loisirsId_fkey` FOREIGN KEY (`loisirsId`) REFERENCES `Loisirs`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `Loisirs` ADD CONSTRAINT `Loisirs_userId_fkey` FOREIGN KEY (`userId`) REFERENCES `Users`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `Users` ADD CONSTRAINT `Users_languesId_fkey` FOREIGN KEY (`languesId`) REFERENCES `Langues`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `Langues` ADD CONSTRAINT `Langues_userId_fkey` FOREIGN KEY (`userId`) REFERENCES `Users`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
